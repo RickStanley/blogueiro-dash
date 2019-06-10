@@ -111,7 +111,7 @@ body {
     border-bottom-right-radius: 0;
     color: white;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 0.75rem;
     text-transform: uppercase;
     cursor: pointer;
     background-color: dodgerblue;
@@ -156,7 +156,7 @@ body {
     top: 0;
     /* color: #212121; */
     position: absolute;
-    border-bottom: 1px solid limegreen;
+    border-bottom: 1px solid hsl(120, 72%, 30%);
     justify-content: space-between;
     right: 0;
     margin: 5px 12px 0;
@@ -171,7 +171,7 @@ body {
     left: 0;
     height: 100%;
     pointer-events: none;
-    background-color: limegreen;
+    background-color: hsl(120, 72%, 30%);
     z-index: -1;
     top: 0;
     border-radius: 3px;
@@ -182,14 +182,15 @@ body {
 }
 .Umschalten__Fenstern:focus,
 .Umschalten__Fenstern:hover {
-    background-color: rgba(50, 205, 50, 0.3);
+    background-color: hsla(120, 72%, 30%, 0.3);
 }
 .Umschalten__Fenstern {
     background-color: transparent;
     border: 0;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: bold;
+    letter-spacing: 0.1rem;
     padding: 5px 0;
     display: block;
     text-align: center;
@@ -262,7 +263,7 @@ body {
     background-color: darkgrey;
     border-radius: 3px;
     color: white;
-    font-size: 14px;
+    font-size: 0.875rem;
     margin-bottom: .5rem;
     text-transform: uppercase;
 }
