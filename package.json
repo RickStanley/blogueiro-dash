@@ -1,0 +1,27 @@
+{
+  "name": "blogueiro-dash",
+  "version": "0.0.1",
+  "description": "Dashboard para Blogueiro",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html --out-dir public",
+    "build": "NODE_ENV=production parcel build src/index.html --out-dir public --no-source-maps --detailed-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.dev.fermen.to:Fermen.to/blogueiro-dash.git"
+  },
+  "author": "Rick Stanley",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  },
+  "dependencies": {
+    "font-picker": "^3.1.0",
+    "lit-html": "^1.1.0",
+    "medium-editor": "^5.23.3",
+    "nav.css": "^1.0.0",
+    "prouter": "^10.0.4",
+    "system-font-css": "^2.0.2"
+  }
+}
