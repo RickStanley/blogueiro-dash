@@ -17,6 +17,7 @@ body {
 .Titel--sekundär {
     font-size: 1.2rem;
     font-weight: 400;
+    color: #212121;
 }
 
 .Flexible--inline {

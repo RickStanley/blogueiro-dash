@@ -21,6 +21,8 @@ fertig(() => {
 	const fontPicker = new FontPicker(
 		'AIzaSyAh12VudYrLvBIGF_rNN0q1jGyaWTrTLOw', // Google API key
 		"Open Sans", // Default font
-		{ limit: 30 }, // Additional options
-	  );
+		{
+			limit: 30
+		}, // Additional options
+	);
 });
