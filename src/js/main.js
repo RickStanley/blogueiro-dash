@@ -23,6 +23,6 @@ fertig(() => {
 		"Open Sans", // Default font
 		{
 			limit: 30
-		}, // Additional options
+		},
 	);
 });
