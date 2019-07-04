@@ -1,4 +1,16 @@
 .Nav {
 	background-color: #212121;
-	width: 90px;
+	width: 80px;
+	position: relative;
+	z-index: 1;
+}
+
+.Nav__inhalt {
+	display: none;
+	position: absolute;
+	width: 300px;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	background-color: #4e4e4e;
 }

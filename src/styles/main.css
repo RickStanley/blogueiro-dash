@@ -2,6 +2,7 @@
 @import url('./Galerie.css');
 @import url('./lib/medium-editor.css');
 @import url('./lib/medium-editor-beagle.css');
+@import url('./Viewer.css');
 @import url('system-font-css');
 
 * {
