@@ -43,48 +43,20 @@
 				<header class="Galerie__Kopf Flexible Flexible--a-center">
 					<h2 class="Titel--sekundär">Galeria</h2>
 					<div class="Galerie__Kontrolle Flexible Flexible--a-center">
-						<button onclick="this.parentElement.parentElement.parentElement.classList.toggle('Listenansicht');" class="Kontrolle__btn" type="button" aktiv>
+						<button onclick="this.parentElement.parentElement.parentElement.classList.toggle('Liebling');this.toggleAttribute('Liebling');" class="Sterntaster" type="button">
+							<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.56 21a1 1 0 0 1-.46-.11L12 18.22l-5.1 2.67a1 1 0 0 1-1.45-1.06l1-5.63-4.12-4a1 1 0 0 1-.25-1 1 1 0 0 1 .81-.68l5.7-.83 2.51-5.13a1 1 0 0 1 1.8 0l2.54 5.12 5.7.83a1 1 0 0 1 .81.68 1 1 0 0 1-.25 1l-4.12 4 1 5.63a1 1 0 0 1-.4 1 1 1 0 0 1-.62.18z" data-name="star"/></svg>
+							<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.56 21a1 1 0 0 1-.46-.11L12 18.22l-5.1 2.67a1 1 0 0 1-1.45-1.06l1-5.63-4.12-4a1 1 0 0 1-.25-1 1 1 0 0 1 .81-.68l5.7-.83 2.51-5.13a1 1 0 0 1 1.8 0l2.54 5.12 5.7.83a1 1 0 0 1 .81.68 1 1 0 0 1-.25 1l-4.12 4 1 5.63a1 1 0 0 1-.4 1 1 1 0 0 1-.62.18zM12 16.1a.92.92 0 0 1 .46.11l3.77 2-.72-4.21a1 1 0 0 1 .29-.89l3-2.93-4.2-.62a1 1 0 0 1-.71-.56L12 5.25 10.11 9a1 1 0 0 1-.75.54l-4.2.62 3 2.93a1 1 0 0 1 .29.89l-.72 4.16 3.77-2a.92.92 0 0 1 .5-.04z" data-name="star"/></svg>
+						</button>
+						<span style="align-self: stretch;width: 1px;background-color: #212121;"></span>
+						<button onclick="this.parentElement.parentElement.parentElement.classList.toggle('Listenansicht');" class="Kontrolle__btn btn--Grid" type="button" aktiv>
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM5 9V5h4v4zM19 3h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-4 6V5h4v4zM9 13H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2zm-4 6v-4h4v4zM19 13h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2zm-4 6v-4h4v4z"/></svg>
 						</button>
-						<button onclick="this.parentElement.parentElement.parentElement.classList.toggle('Listenansicht');" class="Kontrolle__btn" type="button">
+						<button onclick="this.parentElement.parentElement.parentElement.classList.toggle('Listenansicht');" class="Kontrolle__btn btn--Liste" type="button">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" viewBox="0 0 24 24"><circle cx="4" cy="7" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="17" r="1"/><rect width="14" height="2" x="7" y="11" rx=".94" ry=".94"/><rect width="14" height="2" x="7" y="16" rx=".94" ry=".94"/><rect width="14" height="2" x="7" y="6" rx=".94" ry=".94"/></svg>
 						</button>
 					</div>
 				</header>
-				<div class="Galerie__Bilden">
-					<figure>
-						<img data-zoomable="" src='https://placekitten.com/250/250'>
-						<figcaption>
-							<p>Nome: Lúcia Santos Pereira</p>
-							<p>Descrição: A derrota sempre vem primeiro que a felicidade.</p>
-							<p>Instagram: @lucida</p>
-						</figcaption>
-					</figure>
-					<figure>
-						<img data-zoomable="" src='https://placekitten.com/250/250'>
-						<figcaption>
-							<p>Nome: Lúcia Santos Pereira</p>
-							<p>Descrição: A derrota sempre vem primeiro que a felicidade.</p>
-							<p>Instagram: @lucida</p>
-						</figcaption>
-					</figure>
-					<figure>
-						<img data-zoomable="" src='https://placekitten.com/1200/675'>
-						<figcaption>
-							<p>Nome: Lúcia Santos Pereira</p>
-							<p>Descrição: A derrota sempre vem primeiro que a felicidade.</p>
-							<p>Instagram: @lucida</p>
-						</figcaption>
-					</figure>
-					<figure>
-						<img data-zoomable="" src='https://placekitten.com/250/250'>
-						<figcaption>
-							<p>Nome: Lúcia Santos Pereira</p>
-							<p>Descrição: A derrota sempre vem primeiro que a felicidade.</p>
-							<p>Instagram: @lucida</p>
-						</figcaption>
-					</figure>
-				</div>
+				<div class="Galerie__Bilden"></div>
 			</section>
 			<section class="Einstellungen Flexible">
 				<nav class="Einstellungen__Nav Flexible">
@@ -145,48 +117,23 @@
 			</section>
 		</div>
 	</main>
-	<div class="Viewer">
-		<div class="Viewer__innherhalb">
-			<figure class="Viewer__Bild">
-				<img src="https://placekitten.com/250/250" alt="">
-			</figure>
-			<div class="Viewer__beschreibung">
-				<header class="Viewer__Handlugen">
-					<button class="Viewer__Stern" type="button">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g data-name="Layer 2"><path d="M17.56 21a1 1 0 0 1-.46-.11L12 18.22l-5.1 2.67a1 1 0 0 1-1.45-1.06l1-5.63-4.12-4a1 1 0 0 1-.25-1 1 1 0 0 1 .81-.68l5.7-.83 2.51-5.13a1 1 0 0 1 1.8 0l2.54 5.12 5.7.83a1 1 0 0 1 .81.68 1 1 0 0 1-.25 1l-4.12 4 1 5.63a1 1 0 0 1-.4 1 1 1 0 0 1-.62.18z" data-name="star"/></g></svg>
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g data-name="Layer 2"><path d="M17.56 21a1 1 0 0 1-.46-.11L12 18.22l-5.1 2.67a1 1 0 0 1-1.45-1.06l1-5.63-4.12-4a1 1 0 0 1-.25-1 1 1 0 0 1 .81-.68l5.7-.83 2.51-5.13a1 1 0 0 1 1.8 0l2.54 5.12 5.7.83a1 1 0 0 1 .81.68 1 1 0 0 1-.25 1l-4.12 4 1 5.63a1 1 0 0 1-.4 1 1 1 0 0 1-.62.18zM12 16.1a.92.92 0 0 1 .46.11l3.77 2-.72-4.21a1 1 0 0 1 .29-.89l3-2.93-4.2-.62a1 1 0 0 1-.71-.56L12 5.25 10.11 9a1 1 0 0 1-.75.54l-4.2.62 3 2.93a1 1 0 0 1 .29.89l-.72 4.16 3.77-2a.92.92 0 0 1 .5-.04z" data-name="star"/></g></svg>
-					</button>
-					<button class="Viewer__schließen" type="button">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g data-name="Layer 2"><path d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z" data-name="close"/></g></svg>
-					</button>
-				</header>
-				<div class="beschreibung__inhalt">
-					<p class="inhalt__label">Localização</p>
-					<p class="inhalt__Wert">awdawdwaaw dwadwadawdawdawawdwa</p>
-					<p class="inhalt__label">Localização</p>
-					<p class="inhalt__Wert">awdawdwaaw dwadwadawdawdawawdwa dawdwadwa dwadwawadefs fse fsefsgs faf aefafwa dawdwadawd wadawd </p>
-					<p class="inhalt__label">Localização</p>
-					<p class="inhalt__Wert">awdawdwaaw dwadwadawdawdawawdwa</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	<div class="Viewer"></div>
 	<script>
 		function view() {
-            const preview = document.querySelector('.teste');
-            const file = document.querySelector('input[type=file]').files[0];
-            const reader = new FileReader();
+			const preview = document.querySelector('.teste');
+			const file = document.querySelector('input[type=file]').files[0];
+			const reader = new FileReader();
 
-            reader.addEventListener("load", function () {
+			reader.addEventListener("load", function () {
 				// preview.src = reader.result;
 				preview.style.backgroundImage = 'url(' + reader.result + ')';
-            }, false);
+			}, false);
 
-            if (file) {
-                reader.readAsDataURL(file);
-            }
-        }
+			if (file) {
+				reader.readAsDataURL(file);
+			}
+		}
 	</script>
-	<script src="js/main.js"></script>
+	<script src="ts/main.ts"></script>
 </body>
 </html>

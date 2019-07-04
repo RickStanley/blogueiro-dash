@@ -1,27 +1,31 @@
-.Viewer {
+.Viewer__Hintergrund {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .3);
-    display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
+    display: none;
+}
+
+.Viewer__Hintergrund[sichtbar] {
+    display: flex;
 }
 
 .Viewer svg {
-    fill: #212121;
     display: block;
 }
 
 .Viewer__innherhalb {
     width: 85%;
-    min-width: 1170px;
     background-color: white;
     min-height: 85%;
     max-width: 1366px;
     display: flex;
+    border-radius: 3px;
 }
 
 .Viewer__Bild img {
@@ -42,6 +46,16 @@
 
 .Viewer__Handlugen {
     display: flex;
+    padding: 0.5em 0.5em 0;
+}
+
+.Viewer .Sterntaster:not([Liebling]):focus,
+.Viewer .Sterntaster:not([Liebling]):hover {
+    transform: scale(1.1);
+}
+
+.Viewer .Sterntaster {
+    transition: transform .2s;
 }
 
 .Viewer__beschreibung {
@@ -53,38 +67,14 @@
 .Viewer__schließen {
     width: 2em;
     display: block;
+    margin: 0 0 0 auto;
     background-color: transparent;
     padding: 0;
     border: 0;
 }
 
-.beschreibung__inhalt {
+.Viewer .beschreibung__inhalt {
     margin: .5em;
     overflow: auto;
     flex: 1 0 0;
-}
-
-.beschreibung__inhalt>*:first-child {
-    margin-top: 0;
-}
-
-.beschreibung__inhalt>* {
-    margin: .5em 0;
-}
-
-.inhalt__Wert {
-    margin-left: .5em;
-    margin-top: -.5em;
-}
-
-.inhalt__label {
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.Viewer__Stern {
-    background-color: transparent;
-    border: 0;
-    padding: 0;
-    width: 2em;
 }
