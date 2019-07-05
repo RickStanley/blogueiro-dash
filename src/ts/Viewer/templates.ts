@@ -2,14 +2,19 @@ import { html } from "lit-html";
 import { guard } from "lit-html/directives/guard";
 import { Foto, Elternteil } from "../gemeinsam";
 
-let Zustand = {
-    sichtbar: false
+const handler = function (this: HTMLElement, e: Event) {
+    const target = e.target as HTMLElement;
+    if (this === e.target || !this.contains(target) || target.closest('.Viewer__schließen')) {
+        this.toggleAttribute('sichtbar');
+        document.dispatchEvent(new CustomEvent('Viewer__schließen'));
+        return;
+    }
 };
 
-function InhaltBauen(Foto: Foto, sichtbar = Zustand.sichtbar) {
+function InhaltBauen(Foto: Foto, sichtbar = false) {
     const FotoEinträge = Object.entries(Foto.Felder);
     return html`
-    <div class="Viewer__Hintergrund" ?sichtbar=${sichtbar}>
+    <div class="Viewer__Hintergrund" @click=${handler} ?sichtbar=${sichtbar}>
         <div class="Viewer__innherhalb">
             <figure class="Viewer__Bild">
                 <img src="${Foto.URL}">
@@ -26,7 +31,7 @@ function InhaltBauen(Foto: Foto, sichtbar = Zustand.sichtbar) {
                             />
                         </svg>
                     </button>
-                    <button class="Viewer__schließen" type="button" @click=${(e: any) => console.log(e)}>
+                    <button class="Viewer__schließen" type="button">
                         <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"
                             />

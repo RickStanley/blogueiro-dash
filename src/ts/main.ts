@@ -1,4 +1,4 @@
-import { render } from "lit-html";
+import { render, html } from "lit-html";
 import MediumEditor from "medium-editor";
 import FontPicker from "font-picker";
 import { browserRouter } from "prouter";
@@ -24,7 +24,7 @@ const Bilden: Foto[] = [
 		Miniaturansicht: 'https://placekitten.com/300/300',
 		IstLiebling: true,
 		Felder: {
-			Nome: 'Lucia Medeiros',
+			Nome: 'Lucia Medeirosss',
 			Localização: 'Manaus - AM',
 			Descrição: 'A derrota vem primeiro que a vitória'
 		}
@@ -63,16 +63,23 @@ fertig(() => {
 			limit: 30
 		},
 	);
-	router.use('/foto/:id(\\d+)', (req, resp) => {
-		console.log('teste');
-		
-		render(InhaltBauen(Bilden[req.params.id], true), Viewer);
-		resp.end();
-	});
+	router
+		.use('/', (req, resp) => {
+			resp.end();
+		})
+		.use('/foto/:id(\\d+)', (req, resp) => {
+			render(InhaltBauen(Bilden[req.params.id], true), Viewer);
+			resp.end();
+		});
 
 	router.listen();
 
 	render(GalerieBauen(Bilden), ist('.Galerie__Bilden'));
+
+	document.addEventListener('Viewer__schließen', () => {
+		router.push('/');
+		render(html``, Viewer);
+	});
 
 	document.addEventListener('click', (evt) => {
 		const target = evt.target as Element;
