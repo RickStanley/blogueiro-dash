@@ -57,7 +57,7 @@ fertig(() => {
 		}
 	});
 	const fontPicker = new FontPicker(
-		'AIzaSyAh12VudYrLvBIGF_rNN0q1jGyaWTrTLOw', // Google API key
+		'[API_KEY]', // Google API key
 		"Open Sans", // Default font
 		{
 			limit: 30
