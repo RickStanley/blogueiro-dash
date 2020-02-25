@@ -1,6 +1,5 @@
 import { render, html } from "lit-html";
 import MediumEditor from "medium-editor";
-import FontPicker from "font-picker";
 import { browserRouter } from "prouter";
 import { GalerieBauen } from "./Galerie/templates";
 import { Foto, isApplicationPath, fertig, ist } from "./gemeinsam";
@@ -45,6 +44,7 @@ const Bilden: Foto[] = [
 fertig(() => {
 	const router = browserRouter(),
 		Viewer = ist('.Viewer');
+
 	const editor = new MediumEditor('.Inhalt', {
 		placeholder: {
 			text: 'Digite um texto.'
@@ -56,13 +56,7 @@ fertig(() => {
 			buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3']
 		}
 	});
-	const fontPicker = new FontPicker(
-		'[API_KEY]', // Google API key
-		"Open Sans", // Default font
-		{
-			limit: 30
-		},
-	);
+
 	router
 		.use('/', (req, resp) => {
 			resp.end();

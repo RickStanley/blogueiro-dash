@@ -9,17 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.dev.fermen.to:Fermen.to/blogueiro-dash.git"
+    "url": "https://github.com/RickStanley/blogueiro-app.git"
   },
   "author": "Rick Stanley",
   "license": "ISC",
   "devDependencies": {
-    "parcel-bundler": "^1.12.3",
-    "typescript": "^3.5.2"
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.8.2"
   },
   "dependencies": {
-    "font-picker": "^3.1.0",
-    "lit-html": "^1.1.0",
+    "lit-html": "^1.1.2",
     "medium-editor": "^5.23.3",
     "nav.css": "^1.0.0",
     "prouter": "^10.0.4",
