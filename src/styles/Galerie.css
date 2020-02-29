@@ -13,16 +13,16 @@
 
 .Kontrolle__btn:hover,
 .Kontrolle__btn:focus {
-    color: hsl(210, 50%, 56%);
+    color: var(--Hover-Farbe);
 }
 
 .Galerie:not(.Listenansicht) .Kontrolle__btn.btn--Grid,
 .Galerie.Listenansicht .Kontrolle__btn.btn--Liste {
-    color: dodgerblue;
+    color: var(--Knopf);
 }
 
 .Galerie.Liebling .Galerie__Kopf .Sterntaster {
-    color: dodgerblue;
+    color: var(--Knopf);
 }
 
 .Kontrolle__btn {
@@ -48,6 +48,7 @@
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.3);
     padding: .25em;
+    border-radius: 3px;
 }
 
 .Galerie__Bilden {

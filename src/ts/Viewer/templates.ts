@@ -1,6 +1,6 @@
 import { html } from "lit-html";
 import { guard } from "lit-html/directives/guard";
-import { Foto, Elternteil } from "../gemeinsam";
+import { Foto, Elternteil, loadImage } from "../gemeinsam";
 
 const handler = function (this: HTMLElement, e: Event) {
     const target = e.target as HTMLElement;
@@ -16,8 +16,8 @@ function InhaltBauen(Foto: Foto, sichtbar = false) {
     return html`
     <div class="Viewer__Hintergrund" @click=${handler} ?sichtbar=${sichtbar}>
         <div class="Viewer__innherhalb">
-            <figure class="Viewer__Bild">
-                <img src="${Foto.URL}">
+            <figure class="Viewer__Bild spinner">
+                ${loadImage(Foto.URL)}
             </figure>
             <div class="Viewer__beschreibung">
                 <header class="Viewer__Handlugen">

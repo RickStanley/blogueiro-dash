@@ -1,3 +1,5 @@
+import { html } from "lit-html";
+
 // Interfaces
 interface Foto {
     readonly ID: number;
@@ -42,11 +44,16 @@ function Elternteil(node: Element, wo: string) {
     }
 }
 
+function loadImage(src: string) {
+    return html`<img src="${src}" onload="this.parentElement.classList.remove('spinner');">`;
+}
+
 export {
     Foto,
     isApplicationPath,
     fertig,
     ist,
     sind,
-    Elternteil
+    Elternteil,
+    loadImage
 };

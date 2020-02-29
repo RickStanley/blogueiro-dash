@@ -26,6 +26,7 @@
     max-width: 1366px;
     display: flex;
     border-radius: 3px;
+    flex-wrap: wrap;
 }
 
 .Viewer__Bild img {
@@ -42,6 +43,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    min-width: 350px;
 }
 
 .Viewer__Handlugen {
@@ -71,6 +74,11 @@
     background-color: transparent;
     padding: 0;
     border: 0;
+    cursor: pointer;
+}
+
+.Viewer__schließen:hover {
+    color: var(--Hover-Farbe);
 }
 
 .Viewer .beschreibung__inhalt {

@@ -1,138 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Blogueiro Dashboard</title>
-	<link rel="stylesheet" href="styles/normalizador.css">
-	<link rel="stylesheet" href="styles/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blogueiro Dashboard</title>
+    <link rel="stylesheet" href="styles/normalizador.css">
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body class="Flexible">
-	<nav class="Nav">
-		<div class="Nav__inhalt">
-			<ul class="Kundenliste">
-				<li class="Kunde">
-					<div>GL</div>
-				</li>
-				<li class="Kunde">
-					<div>GL</div>
-				</li>
-				<li class="Kunde">
-					<div>GL</div>
-				</li>
-			</ul>
-		</div>
-	</nav>
-	<main class="Main Flexible">
-		<header class="Main__Kopf Flexible Flexible--a-center">
-			<h1 class="Main__Titel">Blogueiros Namorados</h1>
-			<div class="Tasten Flexible">
-				<button onclick="this.parentElement.parentElement.classList.remove('wechseln');" type="button" class="Flexible Flexible--a-center Kopf__Thema-btn">
-					Envios
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24"><circle cx="12" cy="14" r="1.5"/><path d="M19 7h-3V5.5A2.5 2.5 0 0 0 13.5 3h-3A2.5 2.5 0 0 0 8 5.5V7H5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-8a3 3 0 0 0-3-3zm-9-1.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V7h-4zm2 12a3.5 3.5 0 1 1 3.5-3.5 3.5 3.5 0 0 1-3.5 3.5z"/></svg>
-				</button>
-				<button onclick="this.parentElement.parentElement.classList.add('wechseln');" class="Kopf__Thema-btn Flexible Flexible--a-center btn--tomate btn--rotate" type="button">
-					Configurações
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24"><circle cx="12" cy="12" r="1.5"/><path d="M20.32 9.37h-1.09c-.14 0-.24-.11-.3-.26a.34.34 0 0 1 0-.37l.81-.74a1.63 1.63 0 0 0 .5-1.18 1.67 1.67 0 0 0-.5-1.19L18.4 4.26a1.67 1.67 0 0 0-2.37 0l-.77.74a.38.38 0 0 1-.41 0 .34.34 0 0 1-.22-.29V3.68A1.68 1.68 0 0 0 13 2h-1.94a1.69 1.69 0 0 0-1.69 1.68v1.09c0 .14-.11.24-.26.3a.34.34 0 0 1-.37 0L8 4.26a1.72 1.72 0 0 0-1.19-.5 1.65 1.65 0 0 0-1.18.5L4.26 5.6a1.67 1.67 0 0 0 0 2.4l.74.74a.38.38 0 0 1 0 .41.34.34 0 0 1-.29.22H3.68A1.68 1.68 0 0 0 2 11.05v1.89a1.69 1.69 0 0 0 1.68 1.69h1.09c.14 0 .24.11.3.26a.34.34 0 0 1 0 .37l-.81.74a1.72 1.72 0 0 0-.5 1.19 1.66 1.66 0 0 0 .5 1.19l1.34 1.36a1.67 1.67 0 0 0 2.37 0l.77-.74a.38.38 0 0 1 .41 0 .34.34 0 0 1 .22.29v1.09A1.68 1.68 0 0 0 11.05 22h1.89a1.69 1.69 0 0 0 1.69-1.68v-1.09c0-.14.11-.24.26-.3a.34.34 0 0 1 .37 0l.76.77a1.72 1.72 0 0 0 1.19.5 1.65 1.65 0 0 0 1.18-.5l1.34-1.34a1.67 1.67 0 0 0 0-2.37l-.73-.73a.34.34 0 0 1 0-.37.34.34 0 0 1 .29-.22h1.09A1.68 1.68 0 0 0 22 13v-1.94a1.69 1.69 0 0 0-1.68-1.69zM12 15.5a3.5 3.5 0 1 1 3.5-3.5 3.5 3.5 0 0 1-3.5 3.5z"/></svg>
-				</button>
-			</div>
-		</header>
-		<div class="Schaufenstern Flexible">
-			<section class="Galerie Flexible">
-				<header class="Galerie__Kopf Flexible Flexible--a-center">
-					<h2 class="Titel--sekundär">Galeria</h2>
-					<div class="Galerie__Kontrolle Flexible Flexible--a-center">
-						<button onclick="this.parentElement.parentElement.parentElement.classList.toggle('Liebling');this.toggleAttribute('Liebling');" class="Sterntaster" type="button">
-							<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.56 21a1 1 0 0 1-.46-.11L12 18.22l-5.1 2.67a1 1 0 0 1-1.45-1.06l1-5.63-4.12-4a1 1 0 0 1-.25-1 1 1 0 0 1 .81-.68l5.7-.83 2.51-5.13a1 1 0 0 1 1.8 0l2.54 5.12 5.7.83a1 1 0 0 1 .81.68 1 1 0 0 1-.25 1l-4.12 4 1 5.63a1 1 0 0 1-.4 1 1 1 0 0 1-.62.18z" data-name="star"/></svg>
-							<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.56 21a1 1 0 0 1-.46-.11L12 18.22l-5.1 2.67a1 1 0 0 1-1.45-1.06l1-5.63-4.12-4a1 1 0 0 1-.25-1 1 1 0 0 1 .81-.68l5.7-.83 2.51-5.13a1 1 0 0 1 1.8 0l2.54 5.12 5.7.83a1 1 0 0 1 .81.68 1 1 0 0 1-.25 1l-4.12 4 1 5.63a1 1 0 0 1-.4 1 1 1 0 0 1-.62.18zM12 16.1a.92.92 0 0 1 .46.11l3.77 2-.72-4.21a1 1 0 0 1 .29-.89l3-2.93-4.2-.62a1 1 0 0 1-.71-.56L12 5.25 10.11 9a1 1 0 0 1-.75.54l-4.2.62 3 2.93a1 1 0 0 1 .29.89l-.72 4.16 3.77-2a.92.92 0 0 1 .5-.04z" data-name="star"/></svg>
-						</button>
-						<span style="align-self: stretch;width: 1px;background-color: #212121;"></span>
-						<button onclick="this.parentElement.parentElement.parentElement.classList.toggle('Listenansicht');" class="Kontrolle__btn btn--Grid" type="button" aktiv>
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM5 9V5h4v4zM19 3h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-4 6V5h4v4zM9 13H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2zm-4 6v-4h4v4zM19 13h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2zm-4 6v-4h4v4z"/></svg>
-						</button>
-						<button onclick="this.parentElement.parentElement.parentElement.classList.toggle('Listenansicht');" class="Kontrolle__btn btn--Liste" type="button">
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" viewBox="0 0 24 24"><circle cx="4" cy="7" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="17" r="1"/><rect width="14" height="2" x="7" y="11" rx=".94" ry=".94"/><rect width="14" height="2" x="7" y="16" rx=".94" ry=".94"/><rect width="14" height="2" x="7" y="6" rx=".94" ry=".94"/></svg>
-						</button>
-					</div>
-				</header>
-				<div class="Galerie__Bilden"></div>
-			</section>
-			<section class="Einstellungen Flexible">
-				<nav class="Einstellungen__Nav Flexible">
-					<button onclick="this.parentElement.parentElement.classList.remove('thema-einstellungen');" class="Umschalten__Fenstern Flexible Flexible--a-center" type="button">
-						Telas
-					</button>
-					<button onclick="this.parentElement.parentElement.classList.add('thema-einstellungen');" class="Umschalten__Fenstern Flexible Flexible--a-center" type="button">
-						Tema
-					</button>
-				</nav>
-				<div class="Fenstern_Einstellungen">
-					<div class="Wichtigsten Flexible Flexible--j-center">
-						<div class="Wichtigsten__Home">
-							<div class="teste" style="height: 50%;background-size: cover;background-position: center;"></div>
-						</div>
-						<div class="Wichtigsten__Versand"></div>
-						<div class="Wichtigsten__Ende"></div>
-					</div>
-					<div class="Formen">
-						<form>
-							<input onchange="view()" accept="image/*" type="file" name="fundo" id="fundo">
-							<label tabindex="1" class="Flexible--inline Flexible--a-center file_label" for="fundo">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" fill="currentColor"><path d="M18 3H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3zM8 7a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 8 7zm11 10.83A1.09 1.09 0 0 1 18 19H6l7.57-6.82a.69.69 0 0 1 .93 0l4.5 4.48z"/></svg>
-								Fundo
-							</label>
-							<input type="file" accept="image/*" name="logo" id="logo">
-							<label tabindex="1" class="Flexible--inline Flexible--a-center file_label" for="logo">
-								<svg width="14" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 3H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3zM6 5h12a1 1 0 0 1 1 1v8.36l-3.2-2.73a2.77 2.77 0 0 0-3.52 0L5 17.7V6a1 1 0 0 1 1-1z"/><circle cx="8" cy="8.5" r="1.5"/></svg>
-								Destaque
-							</label>
-							<!-- <textarea name="boas-vindas"></textarea> -->
-							<div class="Inhalt" contenteditable="true">
-								Bem-vindo(a) ao Blogueiros Fermen.to.
-								Seu conteúdo é muito importante pra gente: tire fotos, faça vídeos, registre momentos e seja um influenciador nas nossas redes.
-							</div>
-							<input type="text" name="carregar" value="Carregar mídia">
-							<input type="text" name="como-funcion" value="como funciona?">
-						</form>
-						<form hidden>
-							<input type="text" name="agradecido" value="Muito obrigado!">
-							<div class="Inhalt" contenteditable="true">
-								A imagem foi enviada com sucesso!
-							</div>
-						</form>
-					</div>
-				</div>
-				<div class="Theme_Einstellungen">
-					<h2 class="Titel--sekundär">Configurações do tema</h2>
-					<form>
-						<label for="nome">Título</label>
-						<input type="text" name="nome" id="nome" value="Blogueiros Namorados">
-						<label for="cor-tema">Cor tema</label>
-						<input type="color" name="cor-tem" id="cor-tema">
-						<div class="apply-font">Corolho</div>
-					</form>
-				</div>
-			</section>
-		</div>
-	</main>
-	<div class="Viewer"></div>
-	<script>
-		function view() {
-			const preview = document.querySelector('.teste');
-			const file = document.querySelector('input[type=file]').files[0];
-			const reader = new FileReader();
-
-			reader.addEventListener("load", function () {
-				// preview.src = reader.result;
-				preview.style.backgroundImage = 'url(' + reader.result + ')';
-			}, false);
-
-			if (file) {
-				reader.readAsDataURL(file);
-			}
-		}
-	</script>
-	<script src="ts/main.ts"></script>
+    <nav class="Nav">
+        <div class="Nav__inhalt">
+            <ul class="Kundenliste">
+                <li class="Kunde">
+                    <div>GL</div>
+                </li>
+                <li class="Kunde">
+                    <div>GL</div>
+                </li>
+                <li class="Kunde">
+                    <div>GL</div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main id="Wurzel" class="Main Flexible"></main>
+    <div class="Viewer"></div>
+    <script src="ts/main.ts"></script>
 </body>
 </html>

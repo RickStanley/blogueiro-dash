@@ -5,6 +5,19 @@
 @import url('./Viewer.css');
 @import url('system-font-css');
 
+:root {
+    /* Farben */
+    --Sendungen: dodgerblue;
+    --Einstellungen: tomato;
+    --Knopf: dodgerblue;
+    --Hover-Farbe: hsl(210, 50%, 56%);
+    --Tab-Schalter: hsl(120, 72%, 30%);
+    --Tab-Schalter-Hover: hsla(120, 72%, 30%, 0.3);
+
+    /* Kopfzeilenfarbe */
+    --Kopfzeilenfarbe: linear-gradient(90deg, var(--Sendungen) 50%, var(--Einstellungen) 50%);
+}
+
 *::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -30,6 +43,48 @@ html,
 body {
     height: 100%;
     font-family: system-ui;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner::after,
+.spinner::before {
+    content: '';
+    display: block;
+    position: absolute;
+}
+
+.spinner:not(.geladen)::before {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .2);
+    z-index: 2;
+    cursor: wait;
+    opacity: 1;
+}
+
+.spinner:not(.geladen)::after {
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    border-top-color: #000;
+    animation: spinner .6s linear infinite;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 1;
+    transform: unset;
 }
 
 .Sterntaster svg {
@@ -127,7 +182,7 @@ body {
     top: calc(100% - 2px);
     display: block;
     position: absolute;
-    background: linear-gradient(90deg, dodgerblue 50%, tomato 50%);
+    background: var(--Kopfzeilenfarbe);
     transition: transform .4s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
@@ -171,7 +226,7 @@ body {
     font-size: 0.75rem;
     text-transform: uppercase;
     cursor: pointer;
-    background-color: dodgerblue;
+    background-color: var(--Sendungen);
 }
 
 .Einstellungen.thema-einstellungen>*:not(nav) {
@@ -216,7 +271,7 @@ body {
     top: 0;
     /* color: #212121; */
     position: absolute;
-    border-bottom: 1px solid hsl(120, 72%, 30%);
+    border-bottom: 1px solid var(--Tab-Schalter);
     justify-content: space-between;
     right: 0;
     margin: 5px 12px 0;
@@ -231,7 +286,7 @@ body {
     left: 0;
     height: 100%;
     pointer-events: none;
-    background-color: hsl(120, 72%, 30%);
+    background-color: var(--Tab-Schalter);
     z-index: -1;
     top: 0;
     border-radius: 3px;
@@ -243,7 +298,7 @@ body {
 
 .Umschalten__Fenstern:focus,
 .Umschalten__Fenstern:hover {
-    background-color: hsla(120, 72%, 30%, 0.3);
+    background-color: var(--Tab-Schalter-Hover);
 }
 
 .Umschalten__Fenstern {
