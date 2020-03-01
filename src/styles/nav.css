@@ -1,16 +1,91 @@
 .Nav {
-	background-color: #212121;
-	width: 80px;
-	position: relative;
-	z-index: 1;
+  background-color: #4e4e4e;
+  width: 5rem;
+  position: relative;
+  z-index: 1;
+  transition: background-color .2s linear, width .2s;
+}
+
+.Nav__Icon {
+  min-width: 2rem;
+  width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.Nav:hover {
+  background-color: #212121;
+  width: 18em;
+}
+
+.Nav:hover .Nav__Text {
+  display: block;
 }
 
 .Nav__inhalt {
-	display: none;
-	position: absolute;
-	width: 300px;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	background-color: #4e4e4e;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Nav__Text {
+  display: none;
+  white-space: nowrap;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 1;
+}
+
+.Nav__Text,
+.Navigationspunkt {
+  width: 100%;
+  color: white;
+}
+
+.Navigationslink {
+  color: inherit;
+  text-decoration: none;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transition: background-color .2s;
+}
+
+.Navigationslink:hover {
+  background-color: #4e4e4e;
+}
+
+.Nav__Vorlage_Vorschau {
+  height: 5rem;
+  background-color: teal;
+  margin: 0;
+  width: 5rem;
+  position: relative;
+}
+
+.Navigationspunkt--aktiv .Nav__Vorlage_Vorschau::after {
+  /* @todo Versão pra mobile */
+  border-width: 8px 8px 8px 0;
+  border-color: transparent #FFF transparent transparent;
+  border-style: solid;
+  content: '';
+  display: block;
+  height: 0;
+  right: 0;
+  top: 50%;
+  margin-top: -8px;
+  margin-left: -8px;
+  position: absolute;
+  width: 0;
+}
+
+.Anerkennung {
+  margin-top: auto;
+  width: 100%;
+  font-size: 0.875rem;
 }

@@ -1,59 +1,66 @@
-import { html } from "lit-html";
+import { html, TemplateResult } from "lit-html";
 
 // Interfaces
 interface Foto {
-    readonly ID: number;
-    readonly Miniaturansicht: string;
-    readonly URL: string;
-    readonly Felder: { [s: string]: string };
-    readonly IstLiebling: boolean;
+  readonly ID: number;
+  readonly Miniaturansicht: string;
+  readonly URL: string;
+  readonly Felder: { [s: string]: string };
+  readonly IstLiebling: boolean;
 }
 
 // Funktionen
-function isNavigationPath(path: string) {
-    return !!path && !path.startsWith('javascript:void');
-}
+const isNavigationPath = (path: string) => !!path && !path.startsWith('javascript:void');
 
-function isExternalPath(path: string) {
-    return /^https?:\/\//.test(path);
-}
+const isExternalPath = (path: string) => /^https?:\/\//.test(path);
 
-function isApplicationPath(path: string) {
-    return isNavigationPath(path) && !isExternalPath(path);
-}
+const isApplicationPath = (path: string) => isNavigationPath(path) && !isExternalPath(path);
 
-function fertig(f: Function) {
-    /in/.test(document.readyState) ? setTimeout(fertig, 5, f) : f();
-}
+const fertig = (f: Function) => {
+  /in/.test(document.readyState) ? setTimeout(fertig, 5, f) : f();
+};
 
-function ist(Kriterien: string, Kontext?: Element) {
-    return (Kontext || document).querySelector(Kriterien);
-}
+const ist = (Kriterien: string, Kontext?: Element) => (Kontext || document).querySelector(Kriterien);
 
-function sind(Kriterien: string, Kontext?: Element) {
-    return (Kontext || document).querySelectorAll(Kriterien);
-}
+const sind = (Kriterien: string, Kontext?: Element) => (Kontext || document).querySelectorAll(Kriterien);
 
-function Elternteil(node: Element, wo: string) {
-    let Aktuell = node;
-    while (Aktuell.parentNode) {
-        if (wo === Aktuell.id || Aktuell.classList.contains(wo)) {
-            return Aktuell;
-        }
-        Aktuell = <Element>Aktuell.parentNode;
+const Elternteil = (node: Element, wo: string) => {
+  let Aktuell = node;
+  while (Aktuell.parentNode) {
+    if (wo === Aktuell.id || Aktuell.classList.contains(wo)) {
+      return Aktuell;
     }
-}
+    Aktuell = <Element>Aktuell.parentNode;
+  }
+};
 
-function loadImage(src: string) {
-    return html`<img src="${src}" onload="this.parentElement.classList.remove('spinner');">`;
-}
+const loadImage = (src: string) => html`<img src="${src}" onload="this.parentElement.classList.remove('spinner');">`;;
+
+const AdminPruefen = async (url: string, callback: Function): Promise<TemplateResult> => {
+  try {
+    const Antwort = await fetch(url, { method: "HEAD" });
+
+    if (Antwort.ok) {
+      try {
+        return await callback();
+      } catch (error) {
+        return html``;
+      }
+    } else {
+      return html``;
+    }
+  } catch (error) {
+    return html``;
+  }
+};
 
 export {
-    Foto,
-    isApplicationPath,
-    fertig,
-    ist,
-    sind,
-    Elternteil,
-    loadImage
+  Foto,
+  isApplicationPath,
+  fertig,
+  ist,
+  sind,
+  Elternteil,
+  loadImage,
+  AdminPruefen,
 };

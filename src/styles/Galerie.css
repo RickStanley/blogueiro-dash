@@ -1,167 +1,170 @@
 .Schaufenstern .Galerie {
-    padding: 0 12px;
-    flex-direction: column;
+  padding: 0 12px;
+  flex-direction: column;
 }
 
 .Galerie__Kopf {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .Kontrolle__btn svg {
-    display: block;
+  display: block;
 }
 
 .Kontrolle__btn:hover,
 .Kontrolle__btn:focus {
-    color: var(--Hover-Farbe);
+  color: var(--Hover-Farbe);
 }
 
 .Galerie:not(.Listenansicht) .Kontrolle__btn.btn--Grid,
 .Galerie.Listenansicht .Kontrolle__btn.btn--Liste {
-    color: var(--Knopf);
+  color: var(--Knopf);
 }
 
 .Galerie.Liebling .Galerie__Kopf .Sterntaster {
-    color: var(--Knopf);
+  color: var(--Knopf);
 }
 
 .Kontrolle__btn {
-    color: hsl(212, 8%, 57%);
-    border: 0;
-    background-color: transparent;
+  color: hsl(212, 8%, 57%);
+  border: 0;
+  background-color: transparent;
 }
 
 .Galerie.Liebling .Galerie__Bilden figure:not([Liebling]) {
-    display: none;
+  display: none;
 }
 
 .Galerie .Galerie__Kopf .Sterntaster {
-    padding: 0 .4em;
-    width: 1.5em;
-    color: hsl(212, 8%, 57%);
+  padding: 0 .4em;
+  width: 1.5em;
+  color: hsl(212, 8%, 57%);
 }
 
 .Galerie .Bildaktionen {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: .25em;
-    border-radius: 3px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+.Galerie .Bildaktionen .Sterntaster {
+  padding: .25em;
 }
 
 .Galerie__Bilden {
-    overflow: auto;
+  overflow: auto;
 }
 
 .Galerie__Bilden figure img {
-    display: block;
-    object-fit: cover;
-    height: 300px;
-    width: 300px;
-    margin-right: 15px;
+  display: block;
+  object-fit: cover;
+  height: 300px;
+  width: 300px;
+  margin-right: 15px;
 }
 
 .Bild-Link {
-    position: relative;
+  position: relative;
 }
 
 .Bild-Link:hover {
-    cursor: zoom-in;
+  cursor: zoom-in;
 }
 
 .Bild-Link:hover:after,
 .Bild-Link:hover:before,
 .Bild-Link:focus::after,
 .Bild-Link:focus::before {
-    opacity: 1;
-    transform: scale(1);
+  opacity: 1;
+  transform: scale(1);
 }
 
 .Bild-Link::after,
 .Bild-Link::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    opacity: 0;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
 }
 
 .Bild-Link::before {
-    border-radius: 3px;
-    background-color: rgba(0, 0, 0, 0.3);
-    transition: opacity .2s;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: opacity .2s;
 }
 
 .Bild-Link::after {
-    content: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22%23e3e3e3%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M20%205a1%201%200%200%200-1-1h-5a1%201%200%200%200%200%202h2.57l-3.28%203.29a1%201%200%200%200%200%201.42%201%201%200%200%200%201.42%200L18%207.42V10a1%201%200%200%200%201%201%201%201%200%200%200%201-1zM10.71%2013.29a1%201%200%200%200-1.42%200L6%2016.57V14a1%201%200%200%200-1-1%201%201%200%200%200-1%201v5a1%201%200%200%200%201%201h5a1%201%200%200%200%200-2H7.42l3.29-3.29a1%201%200%200%200%200-1.42z%22%2F%3E%3C%2Fsvg%3E');
-    transform: scale(0.8);
-    left: 50%;
-    top: 50%;
-    width: 5em;
-    height: 5em;
-    margin-left: -2.5em;
-    margin-top: -2.5em;
-    transition: opacity .2s, transform .3s;
+  content: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22%23e3e3e3%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M20%205a1%201%200%200%200-1-1h-5a1%201%200%200%200%200%202h2.57l-3.28%203.29a1%201%200%200%200%200%201.42%201%201%200%200%200%201.42%200L18%207.42V10a1%201%200%200%200%201%201%201%201%200%200%200%201-1zM10.71%2013.29a1%201%200%200%200-1.42%200L6%2016.57V14a1%201%200%200%200-1-1%201%201%200%200%200-1%201v5a1%201%200%200%200%201%201h5a1%201%200%200%200%200-2H7.42l3.29-3.29a1%201%200%200%200%200-1.42z%22%2F%3E%3C%2Fsvg%3E');
+  transform: scale(0.8);
+  left: 50%;
+  top: 50%;
+  width: 5em;
+  height: 5em;
+  margin-left: -2.5em;
+  margin-top: -2.5em;
+  transition: opacity .2s, transform .3s;
 }
 
 .Galerie__Bilden figure figcaption {
-    font-size: 0.875rem;
-    flex: 1;
-    min-width: 30%;
+  font-size: 0.875rem;
+  flex: 1;
+  min-width: 30%;
 }
 
 .Galerie__Bilden figure {
-    position: relative;
-    margin: 0;
+  position: relative;
+  margin: 0;
 }
 
 .Galerie.Listenansicht .Galerie__Bilden figure {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
 }
 
 .Galerie.Listenansicht .Bildaktionen {
-    right: unset;
-    left: 0;
+  right: unset;
+  left: 0;
 }
 
 .Galerie.Listenansicht .Bild-Link::before,
 .Galerie.Listenansicht .Bild-Link::after {
-    right: 15px;
+  right: 15px;
 }
 
 .Galerie:not(.Listenansicht) .Bild-Link {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    position: absolute;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
 }
 
 .Galerie:not(.Listenansicht) .Galerie__Bilden figcaption {
-    display: none;
+  display: none;
 }
 
 .Galerie:not(.Listenansicht) .Galerie__Bilden figure img {
-    border-radius: 3px;
-    width: 100%;
-    height: 100%;
+  border-radius: 3px;
+  width: 100%;
+  height: 100%;
 }
 
 .Galerie:not(.Listenansicht) .Galerie__Bilden figure::before {
-    content: '';
-    padding-bottom: 100%;
-    display: block;
+  content: '';
+  padding-bottom: 100%;
+  display: block;
 }
 
 .Galerie:not(.Listenansicht) .Galerie__Bilden {
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }

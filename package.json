@@ -14,10 +14,12 @@
   "author": "Rick Stanley",
   "license": "ISC",
   "devDependencies": {
+    "@types/medium-editor": "^5.0.3",
     "parcel-bundler": "^1.12.4",
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@simonwep/pickr": "^1.5.1",
     "lit-html": "^1.1.2",
     "medium-editor": "^5.23.3",
     "nav.css": "^1.0.0",
