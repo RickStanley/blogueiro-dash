@@ -53,7 +53,7 @@
   height: 5rem;
   display: flex;
   align-items: center;
-  transition: background-color .2s;
+  /* transition: background-color .2s; */
 }
 
 .Navigationslink:hover {

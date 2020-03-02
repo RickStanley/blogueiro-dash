@@ -4,6 +4,12 @@ import MediumEditor from "medium-editor";
 import Pickr from "@simonwep/pickr";
 import { ist } from "../gemeinsam";
 
+enum Feldtypen {
+  AreaTexto = "areatexto",
+  Texto = "texto",
+  Selecao = "selecao",
+}
+
 function nachRendern() {
   let Originalfarbe = '#42445a';
 
@@ -19,7 +25,6 @@ function nachRendern() {
     }
   });
 
-  // Simple example, see optional options for more configuration.
   const pickr = Pickr.create({
     el: '.color-picker',
     theme: 'nano',
@@ -30,11 +35,8 @@ function nachRendern() {
     lockOpacity: true,
     default: Originalfarbe,
     components: {
-      // Main components
       preview: true,
-      // opacity: true,
       hue: true,
-      // Input / output Options
       interaction: {
         input: true,
         save: true,
@@ -76,11 +78,11 @@ function EinstellungenBauen() {
       </nav>
       <div class="Fenstern_Einstellungen">
         <div class="Wichtigsten Flexible Flexible--j-center">
-          <div class="Wichtigsten__Home">
+          <div class="Wichtigsten__Vorschau Wichtigsten__Vorschau--aktiv Wichtigsten__Home">
             <div class="teste" style="height: 50%;background-size: cover;background-position: center;"></div>
           </div>
-          <div class="Wichtigsten__Versand"></div>
-          <div class="Wichtigsten__Ende"></div>
+          <div class="Wichtigsten__Vorschau Wichtigsten__Versand"></div>
+          <div class="Wichtigsten__Vorschau Wichtigsten__Ende"></div>
         </div>
         <div class="Formen">
           <form>
@@ -94,13 +96,15 @@ function EinstellungenBauen() {
                 <svg width="14" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 3H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3zM6 5h12a1 1 0 0 1 1 1v8.36l-3.2-2.73a2.77 2.77 0 0 0-3.52 0L5 17.7V6a1 1 0 0 1 1-1z"/><circle cx="8" cy="8.5" r="1.5"/></svg>
                 Destaque
             </label>
-            <!-- <textarea name="boas-vindas"></textarea> -->
-            <div class="Inhalt" contenteditable="true">
+            <textarea class="Inhalt" name="boas-vindas">
                 Bem-vindo(a) ao Blogueiros Fermen.to.
                 Seu conteúdo é muito importante pra gente: tire fotos, faça vídeos, registre momentos e seja um influenciador nas nossas redes.
-            </div>
+            </textarea>
+            <!-- <div class="Inhalt" contenteditable="true"></div> -->
             <input type="text" name="carregar" value="Carregar mídia">
             <input type="text" name="como-funcion" value="como funciona?">
+          </form>
+          <form>
           </form>
           <form hidden>
             <input type="text" name="agradecido" value="Muito obrigado!">

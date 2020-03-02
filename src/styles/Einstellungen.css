@@ -194,15 +194,25 @@
 }
 
 .Wichtigsten {
-  padding: 5px 0;
+  padding: 0.5rem 0;
 }
 
-.Wichtigsten>* {
+.Wichtigsten__Vorschau {
   width: calc(45vmin * (9 / 16));
   height: 45vmin;
   margin: 0 5px;
   background-color: #686868;
+  cursor: pointer;
 }
+
+.Wichtigsten__Vorschau:hover {
+  box-shadow: 0 0 0 4px hsla(var(--Einstellungen), .4);
+}
+
+.Wichtigsten__Vorschau--aktiv {
+  box-shadow: 0 0 0 4px hsla(var(--Einstellungen), .8);
+}
+
 
 .Theme_Einstellungen_Form {
   max-width: 400px;
