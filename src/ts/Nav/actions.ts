@@ -1,13 +1,28 @@
-const neueVorlage = function (e: Event) {
-    e.preventDefault();
+import { render } from "lit-html";
+import { ist } from "../gemeinsam";
 
-    document.dispatchEvent(new CustomEvent("neueVorlage"));
+let AllgemeineEinstellungen: typeof import("d:/DEV/blogueiro-dash/src/ts/AllgemeineEinstellungen/templates");
+
+const neueVorlage = async function (this: Element, e: Event) {
+    e.preventDefault();
 };
 
-const AllgemeineEinstellungenOffnen = function(e: Event) {
+const AllgemeineEinstellungenOffnen = async function (this: Element, e: Event) {
     e.preventDefault();
-
-    document.dispatchEvent(new CustomEvent("AllgemeineEinstellungenOffnen"));
+    if (!AllgemeineEinstellungen) {
+        this.classList.add("spinner");
+        try {
+            AllgemeineEinstellungen = await import("../AllgemeineEinstellungen/templates");
+        } catch (error) {
+        } finally {
+            this.classList.remove("spinner");
+        }
+        const Befestigungspunkt = document.createElement("div");
+        Befestigungspunkt.classList.add(AllgemeineEinstellungen.Befestigungspunkt);
+        document.body.appendChild(Befestigungspunkt.cloneNode());
+    }
+    render(AllgemeineEinstellungen.Einstellungen(), ist(`.${AllgemeineEinstellungen.Befestigungspunkt}`));
+    // document.dispatchEvent(new CustomEvent("neueVorlage"));
 };
 
 export {

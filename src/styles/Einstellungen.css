@@ -9,7 +9,7 @@
   --Tab-Schalter-Hover: hsla(var(--Einstellungen), 0.2);
   --Eingabegrenze-HLS: 0, 0%, 13%;
   --Einstellungen-Knopf: hsla(var(--Einstellungen), 1);
-  --Einstellugen-Knopf-Hover: hsla(var(--Einstellungen), 0.8);
+  --Einstellungen-Knopf-Hover: hsla(var(--Einstellungen), 0.8);
 }
 
 
@@ -48,6 +48,14 @@
 
 .medium-editor-toolbar {
   filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, .2));
+}
+
+.medium-editor-toolbar li button:focus {
+  box-shadow: none;
+}
+
+.medium-editor-toolbar li button {
+  transition: none;
 }
 
 /* #endregion */
@@ -178,7 +186,7 @@
 .Formen [type=file]:focus+label,
 .Formen label.file_label:focus,
 .Formen label.file_label:hover {
-  background-color: var(--Einstellugen-Knopf-Hover);
+  background-color: var(--Einstellungen-Knopf-Hover);
 }
 
 .Formen label.file_label {
@@ -202,14 +210,34 @@
   text-align: center;
 }
 
+.Formen .Formularaktionen [type=submit]:hover {
+  background-color: var(--Einstellungen-Knopf-Hover);
+}
+
 .Formen .Formularaktionen [type=submit] {
-  background-color: hsla(var(--Einstellungen), 1);
+  background-color: var(--Einstellungen-Knopf);
   color: white;
   padding: 0.4rem 1rem;
 }
 
+.Feld_entfernen {
+  position: absolute;
+  right: -0.5rem;
+  top: 0;
+  background-color: transparent;
+  color: var(--Einstellungen-Knopf);
+  padding: 0;
+  width: 1.5rem;
+  transition: transform .2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.Feld_entfernen:hover {
+  transform: scale(1.3);
+  color: var(--Einstellungen-Knopf-Hover);
+}
+
 /* #region Papierkorb*/
-.Papierkorb {
+/* .Papierkorb {
   width: 30px;
   height: 22px;
   opacity: 0.5;
@@ -229,7 +257,6 @@
   display: inline-block;
   outline: none;
   padding: 0;
-  /* background-color: var(--Einstellungen-Knopf); */
 }
 
 .Deckel {
@@ -264,7 +291,7 @@
   position: absolute;
   right: 8px;
   top: 2px;
-}
+} */
 
 /* #endregion */
 
@@ -304,6 +331,10 @@
   color: white;
   font-size: 0.75rem;
   padding: .3em 0.5em .25em;
+}
+
+.Formen .hinzufuegen:hover {
+  background-color: var(--Einstellungen-Knopf-Hover);
 }
 
 .Wichtigsten {

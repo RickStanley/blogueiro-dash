@@ -1,35 +1,5 @@
-.Viewer__Hintergrund {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .3);
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  display: none;
-}
-
-.Viewer__Hintergrund[sichtbar] {
-  display: flex;
-}
-
 .Viewer svg {
   display: block;
-}
-
-.Viewer__innherhalb {
-  width: 85%;
-  background-color: white;
-  min-height: 85%;
-  max-width: 1366px;
-  display: flex;
-  border-radius: 3px;
-  flex-wrap: wrap;
-  transform: translate3d(0, 0, 0);
-  animation: slide-in-top 0.5s cubic-bezier(0.860, 0.000, 0.070, 1.000) both;
-
 }
 
 .Viewer__Bild img {
@@ -94,16 +64,4 @@
   margin: 1em;
   overflow: auto;
   flex: 1 0 0;
-}
-
-@keyframes slide-in-top {
-  0% {
-    transform: translateY(-1000px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }

@@ -82,10 +82,13 @@ const Feldstruktur = (Feld: Feld, Optionen?: Optionen[]) => {
     `}
     <input type="hidden" name="id" value="${Feld.id}">
     <input type="hidden" name="tipo" value="${Feld.typ}">
-    <button type="button" class="Papierkorb">
+    <button class="Feld_entfernen" type="button">
+      <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm2.71 11.29a1 1 0 010 1.42 1 1 0 01-1.42 0L12 13.41l-1.29 1.3a1 1 0 01-1.42 0 1 1 0 010-1.42l1.3-1.29-1.3-1.29a1 1 0 011.42-1.42l1.29 1.3 1.29-1.3a1 1 0 011.42 1.42L13.41 12z"/></svg>
+    </button>
+    <!-- <button type="button" class="Papierkorb">
       <span class="Deckel"></span>
       <span class="Dose"></span>
-    </button>
+    </button> -->
   </fieldset>
   `;
 
@@ -144,10 +147,10 @@ function nachRendern() {
   });
 
   const pickr = Pickr.create({
-    el: '.color-picker',
-    theme: 'nano',
+    el: '#color-picker-thema',
+    theme: "nano",
     strings: {
-      save: 'Salvar',
+      save: "Salvar",
       cancel: 'Reverter'
     },
     lockOpacity: true,
@@ -163,22 +166,24 @@ function nachRendern() {
     }
   });
 
-  pickr.on('init', () => {
+  const pickerOutput = "picker-output-thema";
+
+  pickr.on("init", () => {
     const span = document.createElement('span');
-    span.classList.add('picker-output');
+    span.classList.add(pickerOutput);
     span.innerText = pickr.getColor().toHEXA().toString();
     // @ts-ignore reportar isso pros devs da lib
     pickr.getRoot().root.appendChild(span);
   });
 
   pickr.on('save', () => {
-    (ist('.Theme_Einstellungen_Form') as any).elements.reset.disabled = false;
-    (ist('.Theme_Einstellungen_Form') as any).elements.submit.disabled = false;
-    (ist('.picker-output') as HTMLElement).innerText = pickr.getColor().toHEXA().toString();
+    (ist("#Theme_Einstellungenform") as any).elements.reset.disabled = false;
+    (ist("#Theme_Einstellungenform") as any).elements.submit.disabled = false;
+    (ist(`.${pickerOutput}`) as HTMLElement).innerText = pickr.getColor().toHEXA().toString();
   });
 
   // @todo Melhorar essa parte, usar o lit-html se possível
-  ist('.Theme_Einstellungen_Form').addEventListener('reset', function (e) {
+  ist("#Theme_Einstellungenform").addEventListener('reset', function (e) {
     pickr.setColor(Originalfarbe);
   });
 }
@@ -252,11 +257,11 @@ function EinstellungenBauen() {
       </div>
       <div class="Theme_Einstellungen">
           <h2 class="Titel--sekundaer unselectable">Configurações do tema</h2>
-          <form class="Theme_Einstellungen_Form">
+          <form id="Theme_Einstellungenform" class="Theme_Einstellungen_Form">
             <label for="nome">Título</label>
             <input @input=${function (e) { this.form.elements.reset.disabled = this.form.elements.submit.disabled = false }} type="text" name="nome" id="nome" value="Blogueiros Namorados">
             <label for="cor-tema">Cor do tema</label>
-            <div class="color-picker">
+            <div id="color-picker-thema" class="color-picker">
             </div>
             <button name="submit" type="submit" disabled>Salvar</button>
             <button name="reset" class="kontur" type="reset" disabled>Resetar</button>

@@ -1,7 +1,7 @@
 import { render, html } from "lit-html";
 import { browserRouter } from "prouter";
 import { Foto, isApplicationPath, fertig, ist } from "./gemeinsam";
-import { InhaltBauen } from "./Viewer/templates";
+import { ViewerinhaltBauen } from "./Viewer/templates";
 import { DashBauen } from "./Dash/templates";
 import { NavBauen } from "./Nav/templates";
 
@@ -9,42 +9,6 @@ interface BeobachtenDetails {
   wen: string;
   was: Function;
 }
-
-const Bilden: Foto[] = [
-  {
-    ID: 0,
-    URL: 'https://placekitten.com/1200/675',
-    Miniaturansicht: 'https://placekitten.com/300/300',
-    IstLiebling: false,
-    Felder: {
-      Nome: 'Lucia Medeiros',
-      Localização: 'Manaus - AM',
-      Descrição: 'A derrota vem primeiro que a vitória'
-    }
-  },
-  {
-    ID: 1,
-    URL: 'https://placekitten.com/1920/720',
-    Miniaturansicht: 'https://placekitten.com/300/300',
-    IstLiebling: true,
-    Felder: {
-      Nome: 'Lucia Medeirosss',
-      Localização: 'Manaus - AM',
-      Descrição: 'A derrota vem primeiro que a vitória'
-    }
-  },
-  {
-    ID: 2,
-    URL: 'https://placekitten.com/1366/768',
-    Miniaturansicht: 'https://placekitten.com/300/300',
-    IstLiebling: true,
-    Felder: {
-      Nome: 'Lucia Medeiros',
-      Localização: 'Manaus - AM',
-      Descrição: 'A derrota vem primeiro que a vitória'
-    }
-  },
-];
 
 fertig(() => {
   const router = browserRouter(),
@@ -55,21 +19,29 @@ fertig(() => {
   //#region Router
   router
     .use('/', (req, resp) => {
+      if (!Wurzel.children.length)
+        render(DashBauen(), Wurzel);
+      if (!Nav.children.length)
+        render(NavBauen(), Nav);
       resp.end();
     })
     .use('/foto/:id(\\d+)', (req, resp) => {
-      render(InhaltBauen(Bilden[req.params.id], true), Viewer);
+      // @todo Habilitar pra fazer update de navegação
+      if (!Viewer.children.length)
+        render(ViewerinhaltBauen(req.params.id), Viewer);
       resp.end();
     });
 
   router.listen();
   //#endregion Router
 
-  // Erster Scrhitt
-  render(DashBauen(), Wurzel);
-  render(NavBauen(), Nav);
-
   //#region Events
+  document.addEventListener("Viewer_offnen", (event: CustomEvent) => {
+    const Foto: Foto = event.detail;
+    render(ViewerinhaltBauen(Foto), Viewer);
+    router.push(`/foto/${Foto.ID}`);
+  });
+
   document.addEventListener('Viewer__schließen', () => {
     router.push('/');
     render(html``, Viewer);

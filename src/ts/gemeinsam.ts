@@ -54,6 +54,9 @@ const AdminPruefen = async (url: string, callback: Function): Promise<TemplateRe
   }
 };
 
+const holenAsync = async (url: string) =>
+  await (await fetch(url)).json();
+
 export {
   Foto,
   isApplicationPath,
@@ -63,4 +66,5 @@ export {
   Elternteil,
   loadImage,
   AdminPruefen,
+  holenAsync
 };

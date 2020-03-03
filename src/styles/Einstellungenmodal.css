@@ -1,0 +1,37 @@
+.Einstellungenmodal {
+  padding-left: 5rem;
+}
+
+.Einstellungenmodal .Allgemeinemodal__innherhalb {
+  max-width: 500px;
+  display: block;
+  padding: 1rem;
+}
+
+.Einstellungenmodal .Viewer__Handlugen {
+  padding: 0;
+}
+.Einstellungenmodal .Formen form {
+  max-width: unset;
+}
+
+.Einstellunghinweis {
+  width: 100%;
+  background-color: var(--callout-info-bg, #f2f0f7);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: #312b45;
+  color: var(--texto-cor-primario, #312b45);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.Einstellunghinweis p {
+  margin: 0 0 0 1rem;
+  flex: 1;
+}
+
+.Einstellunghinweis svg {
+  width: 20px;
+}

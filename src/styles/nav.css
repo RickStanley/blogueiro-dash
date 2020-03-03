@@ -68,6 +68,11 @@
   position: relative;
 }
 
+.Nav:hover .Navigationspunkt--aktiv .Nav__Vorlage_Vorschau::after {
+  transform: rotateY(180deg) scale(1.4) translateX(100%) translateZ(0);
+  opacity: 0.5;
+}
+
 .Navigationspunkt--aktiv .Nav__Vorlage_Vorschau::after {
   /* @todo Versão pra mobile */
   border-width: 8px 8px 8px 0;
@@ -82,6 +87,7 @@
   margin-left: -8px;
   position: absolute;
   width: 0;
+  transition: opacity .2s, transform .2s;
 }
 
 .Anerkennung {
