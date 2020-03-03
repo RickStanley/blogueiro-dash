@@ -3,6 +3,7 @@ import { browserRouter } from "prouter";
 import { Foto, isApplicationPath, fertig, ist } from "./gemeinsam";
 import { InhaltBauen } from "./Viewer/templates";
 import { DashBauen } from "./Dash/templates";
+import { NavBauen } from "./Nav/templates";
 
 interface BeobachtenDetails {
   wen: string;
@@ -48,7 +49,8 @@ const Bilden: Foto[] = [
 fertig(() => {
   const router = browserRouter(),
     Viewer = ist('.Viewer'),
-    Wurzel = ist('#Wurzel');
+    Wurzel = ist('#Wurzel'),
+    Nav = ist(".Nav");
 
   //#region Router
   router
@@ -65,6 +67,7 @@ fertig(() => {
 
   // Erster Scrhitt
   render(DashBauen(), Wurzel);
+  render(NavBauen(), Nav);
 
   //#region Events
   document.addEventListener('Viewer__schließen', () => {

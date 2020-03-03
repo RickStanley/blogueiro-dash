@@ -193,6 +193,119 @@
   text-transform: uppercase;
 }
 
+.Formen .Formularaktionen {
+  background-color: white;
+  position: sticky;
+  bottom: 0;
+  padding: 1rem 0;
+  width: 100%;
+  text-align: center;
+}
+
+.Formen .Formularaktionen [type=submit] {
+  background-color: hsla(var(--Einstellungen), 1);
+  color: white;
+  padding: 0.4rem 1rem;
+}
+
+/* #region Papierkorb*/
+.Papierkorb {
+  width: 30px;
+  height: 22px;
+  opacity: 0.5;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: opacity 200ms;
+
+
+  top: 1em;
+  right: 0;
+  position: absolute;
+
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  padding: 0;
+  /* background-color: var(--Einstellungen-Knopf); */
+}
+
+.Deckel {
+  transform-origin: -7% 100%;
+  transition: transform 150ms;
+  height: 6px;
+  width: 14px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAYAAAAmlE46AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAHpJREFUKM/lkUsOwCAIBecGeCJOSuKqXpMuioa09uO6ixcTnUEU3J0eQAEDWooBmrlgp/BdRhFmkruPnM9EZHN3ZQbfJbHGQpsNaKWUXgRdEWutx43x0Nd2T4xexKc1ifxS/PirQ7SV4WdRRWR7k/rwhxjR2Hxq2YJjBzbopxlpotZQAAAAAElFTkSuQmCC") 0 0 no-repeat;
+  left: 8px;
+  position: absolute;
+  right: 8px;
+  top: 2px;
+}
+
+.Papierkorb:hover {
+  opacity: 1;
+}
+
+.Papierkorb:hover .Deckel {
+  transform: rotate(-45deg);
+  transition: transform 250ms;
+}
+
+.Dose {
+  height: 12px;
+  margin-left: 1px;
+  margin-right: 2px;
+  margin-top: 4px;
+  width: 11px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAYAAAAmlE46AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAHpJREFUKM/lkUsOwCAIBecGeCJOSuKqXpMuioa09uO6ixcTnUEU3J0eQAEDWooBmrlgp/BdRhFmkruPnM9EZHN3ZQbfJbHGQpsNaKWUXgRdEWutx43x0Nd2T4xexKc1ifxS/PirQ7SV4WdRRWR7k/rwhxjR2Hxq2YJjBzbopxlpotZQAAAAAElFTkSuQmCC") -1px -4px no-repeat;
+  left: 8px;
+  position: absolute;
+  right: 8px;
+  top: 2px;
+}
+
+/* #endregion */
+
+.Formen .Feld {
+  margin: 0;
+  padding: .5rem;
+  border: 0;
+  border-radius: 2px;
+  background-color: whitesmoke;
+  font-size: 0.875rem;
+  box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, .2);
+  margin-bottom: 1rem;
+  width: 100%;
+  position: relative;
+}
+
+.Formen .Feld__Untertitel {
+  font-weight: 500;
+  color: white;
+  background-color: hsla(var(--Einstellungen), 1);
+  padding: .25rem;
+  border-radius: 3px;
+}
+
+.Formen .Feld input {
+  text-align: left;
+  width: 100%;
+  display: block;
+}
+
+.Formen .hinzufuegen span {
+  margin-left: 5px;
+}
+
+.Formen .hinzufuegen {
+  background-color: var(--Einstellungen-Knopf);
+  color: white;
+  font-size: 0.75rem;
+  padding: .3em 0.5em .25em;
+}
+
 .Wichtigsten {
   padding: 0.5rem 0;
 }
@@ -201,7 +314,7 @@
   width: calc(45vmin * (9 / 16));
   height: 45vmin;
   margin: 0 5px;
-  background-color: #686868;
+  /* background-color: #686868; */
   cursor: pointer;
 }
 

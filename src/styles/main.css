@@ -16,6 +16,7 @@
 
 button {
   cursor: pointer;
+  border: 0;
 }
 
 button:focus {
@@ -60,6 +61,10 @@ body {
   font-family: 'Roboto', system-ui;
 }
 
+body {
+  color: #212121;
+}
+
 @keyframes spinner {
   to {
     transform: rotate(360deg);
@@ -94,7 +99,7 @@ body {
   margin-left: -10px;
   border-radius: 50%;
   border: 2px solid #ccc;
-  border-top-color: #000;
+  border-top-color: #212121;
   animation: spinner .6s linear infinite;
   z-index: 2;
   pointer-events: none;
@@ -142,7 +147,6 @@ body {
 .Titel--sekundaer {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #212121;
 }
 
 .Flexible--inline {
@@ -161,6 +165,10 @@ body {
   align-items: center;
 }
 
+.Flexible--j-evenly {
+  justify-content: space-evenly;
+}
+
 .Nav,
 .Main {
   height: 100%;
@@ -175,7 +183,6 @@ body {
 
 .Main__Titel {
   font-weight: 500;
-  color: #212121;
   font-size: 1.5rem;
 }
 

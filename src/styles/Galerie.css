@@ -122,10 +122,16 @@
   margin: 0;
 }
 
+.Galerie.Listenansicht .Galerie__Bilden .beschreibung__inhalt {
+  padding: 1rem 0;
+}
+
 .Galerie.Listenansicht .Galerie__Bilden figure {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 1em;
+  background-color: whitesmoke;
+  border-radius: 5px;
 }
 
 .Galerie.Listenansicht .Bildaktionen {
