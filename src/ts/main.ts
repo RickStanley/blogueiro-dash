@@ -1,4 +1,4 @@
-import { render, html } from "lit-html";
+import { render, html, nothing } from "lit-html";
 import { browserRouter } from "prouter";
 import { Foto, isApplicationPath, fertig, ist } from "./gemeinsam";
 import { ViewerinhaltBauen } from "./Viewer/templates";
@@ -44,7 +44,7 @@ fertig(() => {
 
   document.addEventListener('Viewer__schließen', () => {
     router.push('/');
-    render(html``, Viewer);
+    render(nothing, Viewer);
   });
 
   document.addEventListener('Beobachten', (event: CustomEvent) => {

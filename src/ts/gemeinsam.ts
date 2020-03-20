@@ -1,4 +1,4 @@
-import { html, TemplateResult } from "lit-html";
+import { html, TemplateResult, nothing } from "lit-html";
 
 // Interfaces
 interface Foto {
@@ -36,7 +36,7 @@ const Elternteil = (node: Element, wo: string) => {
 
 const loadImage = (src: string) => html`<img src="${src}" onload="this.parentElement.classList.remove('spinner');">`;;
 
-const AdminPruefen = async (url: string, callback: Function): Promise<TemplateResult> => {
+const AdminPruefen = async (url: string, callback: Function): Promise<TemplateResult|{}> => {
   try {
     const Antwort = await fetch(url, { method: "HEAD" });
 
@@ -44,13 +44,13 @@ const AdminPruefen = async (url: string, callback: Function): Promise<TemplateRe
       try {
         return await callback();
       } catch (error) {
-        return html``;
+        return nothing;
       }
     } else {
-      return html``;
+      return nothing;
     }
   } catch (error) {
-    return html``;
+    return nothing;
   }
 };
 

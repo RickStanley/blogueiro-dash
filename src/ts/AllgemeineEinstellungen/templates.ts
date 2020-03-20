@@ -1,4 +1,4 @@
-import { html, render } from "lit-html";
+import { html, render, nothing } from "lit-html";
 import { ist } from "../gemeinsam";
 import "../../styles/Einstellungenmodal.css";
 
@@ -7,7 +7,7 @@ const Befestigungspunkt = "AllgemeineEinstellungen";
 const handler = function (this: HTMLElement, e: Event) {
   const target = e.target as HTMLElement;
   if (this === e.target || !this.contains(target) || target.closest('.Viewer__schließen')) {
-    render(html``, ist(`.${Befestigungspunkt}`));
+    render(nothing, ist(`.${Befestigungspunkt}`));
     return;
   }
 };
